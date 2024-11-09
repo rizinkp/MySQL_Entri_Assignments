@@ -1,2 +1,2 @@
 # MySQL_Entri_Assignments
-MySQL Entri Assignments
+Containing MySQL .sql files and related resources for database tasks and assignments
