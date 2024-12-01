@@ -38,6 +38,7 @@ begin
 #Subtracts 1 if the birthday hasn't occurred this year.
 return TIMESTAMPDIFF(YEAR, DOB, CURDATE()) - (DATE_FORMAT(CURDATE(), '%m-%d') < DATE_FORMAT(DOB, '%m-%d'));
 end $$
+delimiter ;
 
 #3. Write a select query to fetch the Age of all persons using the function that has been created. 
 select *, CalculateAge(DOB) as Age from persons;
