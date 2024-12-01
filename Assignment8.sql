@@ -113,10 +113,10 @@ update customer set phone_no = '4478784545' where state = 'California' and custo
 select * from Customer_details where state = 'California';
 
 #5. Count the number of customers in each state and show only states with more than 5 customers. 
-select State, count(customer_id)  from customer group by state having count(customer_id) > 5;
+select State, count(customer_id) as 'number of customers'  from customer group by state having count(customer_id) > 5;
 
 #6. Write a query that will return the number of customers in each state, based on the "state" column in the "customer_details" view. 
-select State, count('full name') from Customer_details group by state;
+select State, count('full name') as 'number of customers' from Customer_details group by state;
 
 #7. Write a query that returns all the columns from the "customer_details" view, sorted by the "state" column in ascending order.
 select * from customer_details order by state;
