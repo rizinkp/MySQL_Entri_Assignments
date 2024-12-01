@@ -21,6 +21,10 @@ select * from country where population > (select avg(population) from country);
 
 create database Product;
 
+use Product;
+
+select * from customer;
+
 create table Customer
 (
 Customer_Id int primary key auto_increment,
@@ -34,35 +38,30 @@ State varchar(20),
 Zip_Code int,
 Country varchar(20)
 );
-INSERT INTO Customer (Customer_Id, First_name, Last_name, Email, Phone_no, Address, City, State, Zip_code, Country)
+
+INSERT INTO Customer (First_name, Last_name, Email, Phone_no, Address, City, State, Zip_code, Country)
 VALUES
-(1, 'John', 'Doe', 'john.doe@example.com', '1234567890', '123 Main St', 'New York', 'NY', '10001', 'USA'),
-(2, 'Jane', 'Smith', 'jane.smith@example.com', '2345678901', '456 Elm St', 'Los Angeles', 'CA', '90001', 'USA'),
-(3, 'Michael', 'Brown', 'michael.brown@example.com', '3456789012', '789 Pine St', 'London', 'Greater London', '696563', 'United Kingdom'),
-(4, 'Emily', 'Davis', 'emily.davis@example.com', '4567890123', '321 Maple St', 'Toronto', 'Ontario', '5865236', 'Canada'),
-(5, 'Chris', 'Johnson', 'chris.johnson@example.com', '5678901234', '654 Oak St', 'Sydney', 'New South Wales', '2000', 'Australia'),
-(6, 'Patricia', 'Williams', 'patricia.williams@example.com', '6789012345', '987 Birch St', 'Berlin', 'Berlin', '10115', 'Germany'),
-(7, 'Robert', 'Jones', 'robert.jones@example.com', '7890123456', '159 Cedar St', 'Paris', 'Île-de-France', '75001', 'France'),
-(8, 'Linda', 'Miller', 'linda.miller@example.com', '8901234567', '753 Spruce St', 'Mumbai', 'Maharashtra', '400001', 'India'),
-(9, 'James', 'Wilson', 'james.wilson@example.com', '9012345678', '951 Willow St', 'Cape Town', 'Western Cape', '8001', 'South Africa'),
-(10, 'Barbara', 'Moore', 'barbara.moore@example.com', '0123456789', '369 Redwood St', 'Tokyo', 'Tokyo', '1005001', 'Japan'),
-(11, 'Thomas', 'Taylor', 'thomas.taylor@example.com', '1023456789', '741 Aspen St', 'Auckland', 'Auckland', '1010', 'New Zealand'),
-(12, 'Mary', 'Anderson', 'mary.anderson@example.com', '1123456789', '852 Fir St', 'Dubai', 'Dubai', '452965', 'United Arab Emirates'),
-(13, 'Daniel', 'Thomas', 'daniel.thomas@example.com', '1223456789', '963 Hickory St', 'São Paulo', 'São Paulo', '01045000', 'Brazil'),
-(14, 'Elizabeth', 'Martinez', 'elizabeth.martinez@example.com', '1323456789', '147 Walnut St', 'Mexico City', 'Mexico City', '01000', 'Mexico'),
-(15, 'Matthew', 'Hernandez', 'matthew.hernandez@example.com', '1423456789', '258 Cypress St', 'Singapore', 'Central Region', '018983', 'Singapore'),
-(16, 'Jennifer', 'Lopez', 'jennifer.lopez@example.com', '1523456789', '369 Ash St', 'Madrid', 'Madrid', '28001', 'Spain'),
-(17, 'Joshua', 'Clark', 'joshua.clark@example.com', '1623456789', '471 Poplar St', 'Rome', 'Lazio', '00100', 'Italy'),
-(18, 'Ashley', 'Gonzalez', 'ashley.gonzalez@example.com', '1723456789', '582 Cherry St', 'Seoul', 'Seoul', '04524', 'South Korea'),
-(19, 'Andrew', 'Hall', 'andrew.hall@example.com', '1823456789', '693 Magnolia St', 'Beijing', 'Beijing', '100000', 'China'),
-(20, 'Sarah', 'Adams', 'sarah.adams@example.com', '1923456789', '147 Palm St', 'Moscow', 'Moscow', '101000', 'Russia'),
-(21, 'Brindo', 'James', 'brindo.james@example.com', '445825648513', '136 glowe St', 'California', 'California', '201000', 'USA');
-
-select * from customer;
-
-
-INSERT INTO Customer (First_Name, Last_Name, Email, Phone_No, Address, City, State, Zip_Code, Country)
-VALUES
+('John', 'Doe', 'john.doe@example.com', '1234567890', '123 Main St', 'New York', 'NY', '10001', 'USA'),
+('Jane', 'Smith', 'jane.smith@example.com', '2345678901', '456 Elm St', 'Los Angeles', 'CA', '90001', 'USA'),
+('Michael', 'Brown', 'michael.brown@example.com', '3456789012', '789 Pine St', 'London', 'Greater London', '696563', 'United Kingdom'),
+('Emily', 'Davis', 'emily.davis@example.com', '4567890123', '321 Maple St', 'Toronto', 'Ontario', '5865236', 'Canada'),
+('Chris', 'Johnson', 'chris.johnson@example.com', '5678901234', '654 Oak St', 'Sydney', 'New South Wales', '2000', 'Australia'),
+('Patricia', 'Williams', 'patricia.williams@example.com', '6789012345', '987 Birch St', 'Berlin', 'Berlin', '10115', 'Germany'),
+('Robert', 'Jones', 'robert.jones@example.com', '7890123456', '159 Cedar St', 'Paris', 'Île-de-France', '75001', 'France'),
+('Linda', 'Miller', 'linda.miller@example.com', '8901234567', '753 Spruce St', 'Mumbai', 'Maharashtra', '400001', 'India'),
+('James', 'Wilson', 'james.wilson@example.com', '9012345678', '951 Willow St', 'Cape Town', 'Western Cape', '8001', 'South Africa'),
+('Barbara', 'Moore', 'barbara.moore@example.com', '0123456789', '369 Redwood St', 'Tokyo', 'Tokyo', '1005001', 'Japan'),
+('Thomas', 'Taylor', 'thomas.taylor@example.com', '1023456789', '741 Aspen St', 'Auckland', 'Auckland', '1010', 'New Zealand'),
+('Mary', 'Anderson', 'mary.anderson@example.com', '1123456789', '852 Fir St', 'Dubai', 'Dubai', '452965', 'United Arab Emirates'),
+('Daniel', 'Thomas', 'daniel.thomas@example.com', '1223456789', '963 Hickory St', 'São Paulo', 'São Paulo', '01045000', 'Brazil'),
+('Elizabeth', 'Martinez', 'elizabeth.martinez@example.com', '1323456789', '147 Walnut St', 'Mexico City', 'Mexico City', '01000', 'Mexico'),
+('Matthew', 'Hernandez', 'matthew.hernandez@example.com', '1423456789', '258 Cypress St', 'Singapore', 'Central Region', '018983', 'Singapore'),
+('Jennifer', 'Lopez', 'jennifer.lopez@example.com', '1523456789', '369 Ash St', 'Madrid', 'Madrid', '28001', 'Spain'),
+('Joshua', 'Clark', 'joshua.clark@example.com', '1623456789', '471 Poplar St', 'Rome', 'Lazio', '00100', 'Italy'),
+('Ashley', 'Gonzalez', 'ashley.gonzalez@example.com', '1723456789', '582 Cherry St', 'Seoul', 'Seoul', '04524', 'South Korea'),
+('Andrew', 'Hall', 'andrew.hall@example.com', '1823456789', '693 Magnolia St', 'Beijing', 'Beijing', '100000', 'China'),
+('Sarah', 'Adams', 'sarah.adams@example.com', '1923456789', '147 Palm St', 'Moscow', 'Moscow', '101000', 'Russia'),
+('Brindo', 'James', 'brindo.james@example.com', '445825648513', '136 glowe St', 'California', 'California', '201000', 'USA'),
 ('Rahul', 'Sharma', 'rahul.sharma@example.com', '9876543210', '123 MG Road', 'Mumbai', 'Maharashtra', '400001', 'India'),
 ('Priya', 'Singh', 'priya.singh@example.com', '9876543211', '456 Residency Road', 'Bengaluru', 'Karnataka', '560001', 'India'),
 ('Arjun', 'Kumar', 'arjun.kumar@example.com', '9876543212', '789 Park Street', 'Kochi', 'Kerala', '682001', 'India'),
@@ -73,6 +72,15 @@ VALUES
 ('Michael', 'Brown', 'michael.brown@example.com', '9876543217', '789 Pine Lane', 'New York', 'New York', '10001', 'USA'),
 ('Emily', 'Davis', 'emily.davis@example.com', '9876543218', '101 Ocean Drive', 'Miami', 'Florida', '33101', 'USA'),
 ('Chris', 'Johnson', 'chris.johnson@example.com', '9876543219', '55 River Street', 'Chicago', 'Illinois', '60601', 'USA');
+
+INSERT INTO Customer (First_name, Last_name, Email, Phone_no, Address, City, State, Zip_code, Country)
+VALUES
+('Alice', 'Green', 'alice.green@example.com', '4234567890', '123 Maple St', 'Springfield', 'Illinois', '62701', 'USA'),
+('Bob', 'White', 'bob.white@example.com', '7345678901', '456 Oak St', 'Springfield', 'Illinois', '62702', 'USA'),
+('Carol', 'Black', 'carol.black@example.com', '9456789012', '789 Pine St', 'Springfield', 'Illinois', '62703', 'USA'),
+('David', 'Brown', 'david.brown@example.com', '4787890123', '321 Cedar St', 'Springfield', 'Illinois', '62704', 'USA'),
+('Eve', 'Blue', 'eve.blue@example.com', '7678901234', '654 Birch St', 'Springfield', 'Illinois', '62705', 'USA');
+
 
 select * from customer;
 
@@ -100,7 +108,7 @@ select concat(first_name, ' ', last_name) as 'full name', email, phone_no, state
 select * from Customer_details;
 
 #4. Update phone numbers of customers who live in California for Customer_details view. 
-update customer set phone_no = '448562367856' where state = 'California';
+update customer set phone_no = '4478784545' where state = 'California' and customer_id = 21;
 
 select * from Customer_details where state = 'California';
 
